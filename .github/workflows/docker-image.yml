@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: |
-        echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u "dhanupreeth" --password-stdin
+        echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "dhanupreeth" --password-stdin
         docker image build -t dhanupreeth/ruby-2.7:v1
         docker push dhanupreeth/ruby-2.7:v1
         
