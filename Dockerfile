@@ -43,6 +43,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
       libssl-dev \
       libreadline-gplv2-dev \
       libffi-dev \
+      vim \
 && rm -rf /var/lib/apt/lists/*
 
 RUN echo 'gem: --no-document' >> /.gemrc
@@ -62,3 +63,4 @@ RUN gem update --system "$GEM_VERSION" \
 
 ENV TERM xterm
 RUN gem install foreman
+
